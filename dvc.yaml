@@ -1,0 +1,29 @@
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+      - src/data_ingestion.py
+      - data/raw.csv
+    outs:
+      - data/train.csv
+      - data/test.csv
+
+  data_processing:
+    cmd: python src/data_processing.py
+    deps:
+      - src/data_processing.py
+      - data/train.csv
+      - data/test.csv
+    outs:
+      - models/preprocessor.pkl
+
+  model_training:
+    cmd: python src/model_training.py
+    deps:
+      - src/model_training.py
+      - src/data_processing.py
+      - models/preprocessor.pkl
+    outs:
+      - models/model.pkl
+      - models/tune_model.pkl
+

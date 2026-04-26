@@ -1,0 +1,26 @@
+# ignore this files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+env/
+.ipynb_checkpoints/
+logs/
+*.log
+models/*.pkl
+.env
+/data/*
+!/data/*.dvc
+.dvc/cache/
+# Docker
+*.tar
+.DS_Store
+Thumbs.db
+.vscode/
+*.tmp
+*.temp
